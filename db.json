@@ -1,36 +1,31 @@
 {
   "courses": [
     {
-      "id": "4",
       "title": "Node.js Fundamentals",
       "instructor": "Michael",
       "duration": "7 hours",
       "rating": 4.3,
       "category": "Backend",
-      "description": "Learn how to build fast and scalable backend applications using Node.js. Understand modules, APIs, and asynchronous programming. Perfect starting point for backend development.",
-      "image": "https://assets.st-note.com/production/uploads/images/44075965/rectangle_large_type_2_8b42f0d4d8010ca1a7489e6b678f3366.jpg?width=2000&height=2000&fit=bounds&quality=85",
+      "description": "Learn how to build fast and scalable backend applications using Node.js.",
+      "image": "https://assets.st-note.com/production/uploads/images/44075965/rectangle_large_type_2_8b42f0d4d8010ca1a7489e6b678f3366.jpg",
       "video": "https://www.w3schools.com/html/movie.mp4",
       "lessons": [
         {
-          "lessonId": 1,
           "title": "Node.js Introduction",
           "duration": "45 mins",
           "video": "https://www.youtube.com/watch?v=TlB_eWDSMt4"
         },
         {
-          "lessonId": 2,
           "title": "Modules & NPM",
           "duration": "40 mins",
           "video": "https://www.youtube.com/watch?v=jHDhaSSKmB0"
         },
         {
-          "lessonId": 3,
           "title": "File System & Streams",
           "duration": "50 mins",
           "video": "https://www.youtube.com/watch?v=OFpqvaJ3QYg"
         },
         {
-          "lessonId": 4,
           "title": "Async Programming",
           "duration": "55 mins",
           "video": "https://www.youtube.com/watch?v=PoRJizFvM7s"
@@ -38,30 +33,26 @@
       ]
     },
     {
-      "id": "5",
       "title": "Express.js Deep Dive",
       "instructor": "Emma",
       "duration": "5 hours",
       "rating": 4.2,
       "category": "Backend",
-      "description": "Build powerful REST APIs using Express.js. Learn routing, middleware, and authentication. Ideal for creating real-world backend services.",
+      "description": "Build powerful REST APIs using Express.js.",
       "image": "https://www.softude.com/wp-content/uploads/36.webp",
       "video": "https://www.w3schools.com/html/mov_bbb.mp4",
       "lessons": [
         {
-          "lessonId": 1,
           "title": "Routing Basics",
           "duration": "40 mins",
           "video": "https://www.youtube.com/watch?v=L72fhGm1tfE"
         },
         {
-          "lessonId": 2,
           "title": "Middleware",
           "duration": "45 mins",
           "video": "https://www.youtube.com/watch?v=lY6icfhap2o"
         },
         {
-          "lessonId": 3,
           "title": "Authentication",
           "duration": "60 mins",
           "video": "https://www.youtube.com/watch?v=Ud5xKCYQTjM"
@@ -69,30 +60,26 @@
       ]
     },
     {
-      "id": "6",
       "title": "MongoDB Basics",
       "instructor": "Olivia",
       "duration": "4 hours",
       "rating": 4.1,
       "category": "Database",
-      "description": "Understand NoSQL databases and MongoDB fundamentals. Learn CRUD operations and schema design. Great for full-stack developers.",
+      "description": "Understand NoSQL databases and MongoDB fundamentals.",
       "image": "https://www.developer-tech.com/wp-content/uploads/2021/02/mongodb-atlas-google-cloud-partnership-nosql-databases-integrations-2.jpg",
       "video": "https://www.w3schools.com/html/movie.mp4",
       "lessons": [
         {
-          "lessonId": 1,
           "title": "NoSQL Concepts",
           "duration": "30 mins",
           "video": "https://www.youtube.com/watch?v=0buKQHokLK8"
         },
         {
-          "lessonId": 2,
           "title": "CRUD Operations",
           "duration": "50 mins",
           "video": "https://www.youtube.com/watch?v=ExcRbA7fy_A"
         },
         {
-          "lessonId": 3,
           "title": "Schema Design",
           "duration": "40 mins",
           "video": "https://www.youtube.com/watch?v=DZBGEVgL2eE"
@@ -100,30 +87,26 @@
       ]
     },
     {
-      "id": "7",
       "title": "Full Stack MERN",
       "instructor": "Chris",
       "duration": "12 hours",
       "rating": 4.8,
       "category": "Fullstack",
-      "description": "Build complete web applications using MongoDB, Express, React, and Node.js. Learn frontend and backend integration. Perfect for aspiring full-stack developers.",
+      "description": "Build complete web applications using MongoDB, Express, React, and Node.js.",
       "image": "https://eeakolkata.com/wp-content/uploads/2025/07/0_kxPYwfJmkXZ3iCWy-1.png",
       "video": "https://www.youtube.com/embed/7CqJlxBYj-M",
       "lessons": [
         {
-          "lessonId": 1,
           "title": "Project Setup",
           "duration": "60 mins",
           "video": "https://www.youtube.com/embed/mrHNSanmqQ4"
         },
         {
-          "lessonId": 2,
           "title": "Frontend Integration",
           "duration": "90 mins",
           "video": "https://www.youtube.com/embed/bMknfKXIFA8"
         },
         {
-          "lessonId": 3,
           "title": "Backend API",
           "duration": "90 mins",
           "video": "https://www.youtube.com/embed/Oe421EPjeBE"
@@ -131,576 +114,21 @@
       ]
     },
     {
-      "id": "8",
-      "title": "HTML & CSS Mastery",
-      "instructor": "Sophia",
-      "duration": "5 hours",
-      "rating": 4.3,
-      "category": "Frontend",
-      "description": "Master modern HTML5 and CSS3 techniques. Learn layouts, Flexbox, Grid, and responsive design. Build beautiful and structured web pages.",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJPjYTLM3f_FdYw5qFPhi02FvOWGnlgRuiJQ&s",
-      "video": "https://www.w3schools.com/html/movie.mp4",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "HTML5 Fundamentals",
-          "duration": "40 mins",
-          "video": "https://www.youtube.com/watch?v=pQN-pnXPaVg"
-        },
-        {
-          "lessonId": 2,
-          "title": "CSS Basics",
-          "duration": "45 mins",
-          "video": "https://www.youtube.com/watch?v=1Rs2ND1ryYc"
-        },
-        {
-          "lessonId": 3,
-          "title": "Flexbox & Grid",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/watch?v=JJSoEo8JSnc"
-        },
-        {
-          "lessonId": 4,
-          "title": "Responsive Design",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/watch?v=srvUrASNj0s"
-        }
-      ]
-    },
-    {
-      "id": "9",
-      "title": "TypeScript for Beginners",
-      "instructor": "Daniel",
-      "duration": "6 hours",
-      "rating": 4.6,
-      "category": "Frontend",
-      "description": "Learn TypeScript to write safer and scalable JavaScript applications. Understand types, interfaces, and generics. Improve code quality and maintainability.",
-      "image": "https://incentsoft.com/wp-content/uploads/2024/07/ts_logo.BstCNrTU_1Dbxpr.webp",
-      "video": "https://www.w3schools.com/html/mov_bbb.mp4",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "TypeScript Basics",
-          "duration": "45 mins",
-          "video": "https://www.youtube.com/watch?v=BCg4U1FzODs"
-        },
-        {
-          "lessonId": 2,
-          "title": "Interfaces & Types",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/watch?v=ahCwqrYpIuM"
-        },
-        {
-          "lessonId": 3,
-          "title": "Generics",
-          "duration": "40 mins",
-          "video": "https://www.youtube.com/watch?v=nViEqpgwxHE"
-        }
-      ]
-    },
-    {
-      "id": "10",
-      "title": "Redux Toolkit",
-      "instructor": "Liam",
-      "duration": "4 hours",
-      "rating": 4.2,
-      "category": "Frontend",
-      "description": "Manage complex state in React applications using Redux Toolkit.",
-      "image": "https://miro.medium.com/1*AJpFZrofvxMn3MHh9p3i_Q.jpeg",
-      "video": "https://www.youtube.com/embed/9zySeP5vH9c",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Redux Basics",
-          "duration": "40 mins",
-          "video": "https://www.youtube.com/embed/poQXNp9ItL4"
-        },
-        {
-          "lessonId": 2,
-          "title": "Slices & Reducers",
-          "duration": "45 mins",
-          "video": "https://www.youtube.com/embed/1i04-A7kfFI"
-        },
-        {
-          "lessonId": 3,
-          "title": "Async Thunks",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/embed/k68j9xlbHHk"
-        }
-      ]
-    },
-    {
-      "id": "11",
-      "title": "Python for Beginners",
-      "instructor": "James",
-      "duration": "10 hours",
-      "rating": 4.5,
-      "category": "Programming",
-      "description": "Start your programming journey with Python.",
-      "image": "https://miro.medium.com/1*3IcLSFuT8PQg4cUBaRXH1A.png",
-      "video": "https://www.youtube.com/embed/_uQrJ0TkZlc",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Python Syntax",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/kqtD5dpn9C8"
-        },
-        {
-          "lessonId": 2,
-          "title": "Loops & Functions",
-          "duration": "75 mins",
-          "video": "https://www.youtube.com/embed/6iF8Xb7Z3wQ"
-        },
-        {
-          "lessonId": 3,
-          "title": "OOP in Python",
-          "duration": "80 mins",
-          "video": "https://www.youtube.com/embed/JeznW_7DlB0"
-        }
-      ]
-    },
-    {
-      "id": "12",
-      "title": "Data Structures in Java",
-      "instructor": "Robert",
-      "duration": "9 hours",
-      "rating": 4.4,
-      "category": "Programming",
-      "image": "https://studyglance.in/images/dslogo.jpg",
-      "video": "https://www.youtube.com/embed/RBSGKlAvoiM",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Arrays & Linked List",
-          "duration": "70 mins",
-          "video": "https://www.youtube.com/embed/0hOw5H1qkYg"
-        },
-        {
-          "lessonId": 2,
-          "title": "Stacks & Queues",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/gyNyt1T1Uj8"
-        },
-        {
-          "lessonId": 3,
-          "title": "Trees & Graphs",
-          "duration": "80 mins",
-          "video": "https://www.youtube.com/embed/oSWTXtMglKE"
-        }
-      ]
-    },
-    {
-      "id": "13",
-      "title": "Spring Boot Basics",
-      "instructor": "Sophia",
-      "duration": "7 hours",
-      "rating": 4.3,
-      "category": "Backend",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXM9X4bsl1MuU7gu_1GUyRuTXGcbJQPdwc0Q&s",
-      "video": "https://www.youtube.com/embed/35EQXmHKZYs",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Spring Boot Setup",
-          "duration": "45 mins",
-          "video": "https://www.youtube.com/embed/9SGDpanrc8U"
-        },
-        {
-          "lessonId": 2,
-          "title": "REST APIs",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/SLwpqD8n3d0"
-        },
-        {
-          "lessonId": 3,
-          "title": "Database Integration",
-          "duration": "75 mins",
-          "video": "https://www.youtube.com/embed/vrj9AohVhPA"
-        }
-      ]
-    },
-    {
-      "id": "14",
-      "title": "C Programming Fundamentals",
-      "instructor": "William",
-      "duration": "6 hours",
-      "rating": 4.1,
-      "category": "Programming",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaVEbySPpL6thTKRzdESt5v75g5Ie4J_G69w&s",
-      "video": "https://www.youtube.com/embed/KJgsSFOSQv0",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "C Basics",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/embed/ZSPZob_1TOk"
-        },
-        {
-          "lessonId": 2,
-          "title": "Pointers",
-          "duration": "70 mins",
-          "video": "https://www.youtube.com/embed/zuegQmMdy8M"
-        },
-        {
-          "lessonId": 3,
-          "title": "Memory Management",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/5N1C0eKX4xI"
-        }
-      ]
-    },
-    {
-      "id": "15",
-      "title": "C++ Object Oriented Programming",
-      "instructor": "Lucas",
-      "duration": "8 hours",
-      "rating": 4.2,
-      "category": "Programming",
-      "image": "https://img-c.udemycdn.com/course/480x270/5623458_170b_3.jpg?w=3840&q=75",
-      "video": "https://www.youtube.com/embed/vLnPwxZdW4Y",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Classes & Objects",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/ABRP_5RYhqU"
-        },
-        {
-          "lessonId": 2,
-          "title": "Inheritance",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/embed/JHDCfHn8YvQ"
-        },
-        {
-          "lessonId": 3,
-          "title": "Polymorphism",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/_bYFu9mBnr4"
-        }
-      ]
-    },
-    {
-      "id": "16",
-      "title": "Machine Learning Intro",
-      "instructor": "Ava",
-      "duration": "11 hours",
-      "rating": 4.6,
-      "category": "AI",
-      "image": "https://miro.medium.com/v2/resize:fit:1400/1*ikEB53J-pPJCXy1Ub1XUsQ.jpeg",
-      "video": "https://www.youtube.com/embed/GwIo3gDZCVQ",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "ML Overview",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/ukzFI9rgwfU"
-        },
-        {
-          "lessonId": 2,
-          "title": "Supervised Learning",
-          "duration": "75 mins",
-          "video": "https://www.youtube.com/embed/29ZQ3TDGgRQ"
-        },
-        {
-          "lessonId": 3,
-          "title": "Unsupervised Learning",
-          "duration": "70 mins",
-          "video": "https://www.youtube.com/embed/yR2h9R7F1bM"
-        }
-      ]
-    },
-    {
-      "id": "19",
-      "title": "DevOps Fundamentals",
-      "instructor": "Isabella",
-      "duration": "6 hours",
-      "rating": 4.3,
-      "category": "DevOps",
-      "image": "https://img.freepik.com/premium-vector/devops-software-development-methodology-dev-ops-software-vector-stock-illustration_100456-11643.jpg",
-      "video": "https://www.youtube.com/embed/Xrgk023l4lI",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "CI/CD Basics",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/embed/scEDHsr3APg"
-        },
-        {
-          "lessonId": 2,
-          "title": "Automation Tools",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/0yWAtQ6wYNM"
-        }
-      ]
-    },
-    {
-      "id": "20",
-      "title": "Docker & Kubernetes",
-      "instructor": "Logan",
-      "duration": "10 hours",
-      "rating": 4.6,
-      "category": "DevOps",
-      "image": "https://miro.medium.com/0*jiigOGj0jweYH0qI.png",
-      "video": "https://www.youtube.com/embed/3c-iBn73dDE",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Docker Containers",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/fqMOX6JJhGo"
-        },
-        {
-          "lessonId": 2,
-          "title": "Kubernetes Basics",
-          "duration": "75 mins",
-          "video": "https://www.youtube.com/embed/X48VuDVv0do"
-        }
-      ]
-    },
-    {
-      "id": "21",
-      "title": "Next.js Complete Guide",
-      "instructor": "Harper",
-      "duration": "8 hours",
-      "rating": 4.7,
-      "category": "Frontend",
-      "image": "https://i.pinimg.com/1200x/4a/2b/e7/4a2be73b1e2efb44355436c40bf496dd.jpg",
-      "video": "https://www.youtube.com/embed/Sklc_fQBmcs",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Next.js Setup",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/embed/ZVnjOPwW4ZA"
-        },
-        {
-          "lessonId": 2,
-          "title": "Routing & SSR",
-          "duration": "70 mins",
-          "video": "https://www.youtube.com/embed/mTz0GXj8NN0"
-        }
-      ]
-    },
-    {
-      "id": "23",
-      "title": "React Native Basics",
-      "instructor": "Evelyn",
-      "duration": "7 hours",
-      "rating": 4.3,
-      "category": "Mobile",
-      "description": "Build cross-platform mobile apps using React Native. Learn components, navigation, and state management. Use your React knowledge to create mobile apps.",
-      "image": "https://reactnative.dev/img/header_logo.svg",
-      "video": "https://www.youtube.com/embed/0-S5a0eXPoc",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "React Native Setup",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/embed/0-S5a0eXPoc"
-        },
-        {
-          "lessonId": 2,
-          "title": "Navigation",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/2kL28QywQvg"
-        }
-      ]
-    },
-    {
-      "id": "24",
-      "title": "System Design for Beginners",
-      "instructor": "Alexander",
-      "duration": "10 hours",
-      "rating": 4.8,
-      "category": "System Design",
-      "description": "Learn scalability, load balancing, caching, and database design. Understand how large-scale systems are built. Essential for product-based company interviews.",
-      "image": "https://img.freepik.com/premium-vector/setting-system-logo-design-icon-bass_766448-66.jpg",
-      "video": "https://www.youtube.com/embed/UzLMhqg3_Wc",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Scalability Basics",
-          "duration": "80 mins",
-          "video": "https://www.youtube.com/embed/UzLMhqg3_Wc"
-        },
-        {
-          "lessonId": 2,
-          "title": "Load Balancing & Caching",
-          "duration": "75 mins",
-          "video": "https://www.youtube.com/embed/K0Ta65OqQkY"
-        }
-      ]
-    },
-    {
-      "id": "25",
-      "title": "Machine Learning Basics",
-      "instructor": "Scarlett",
-      "duration": "12 hours",
-      "rating": 4.6,
-      "category": "AI",
-      "description": "Understand supervised and unsupervised learning techniques. Learn regression, classification, and model evaluation. Great introduction to AI concepts.",
-      "image": "https://www.shutterstock.com/image-vector/machine-learning-banner-logo-technology-260nw-1816762394.jpg",
-      "video": "https://www.youtube.com/embed/GwIo3gDZCVQ",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Regression",
-          "duration": "70 mins",
-          "video": "https://www.youtube.com/embed/GwIo3gDZCVQ"
-        },
-        {
-          "lessonId": 2,
-          "title": "Classification",
-          "duration": "75 mins",
-          "video": "https://www.youtube.com/embed/i_LwzRVP7bg"
-        }
-      ]
-    },
-    {
-      "id": "26",
-      "title": "Deep Learning Introduction",
-      "instructor": "Jack",
-      "duration": "14 hours",
-      "rating": 4.7,
-      "category": "AI",
-      "description": "Learn neural networks, CNNs, and deep learning fundamentals. Understand how AI models process images and text. Step into advanced AI development.",
-      "image": "https://miro.medium.com/v2/resize:fit:1400/1*tH8rkJwSokOgxIcsxUtgrA.png",
-      "video": "https://www.youtube.com/embed/aircAruvnKk",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Deep Neural Networks",
-          "duration": "90 mins",
-          "video": "https://www.youtube.com/embed/aircAruvnKk"
-        },
-        {
-          "lessonId": 2,
-          "title": "Image Processing with CNN",
-          "duration": "85 mins",
-          "video": "https://www.youtube.com/embed/YRhxdVk_sIs"
-        }
-      ]
-    },
-    {
-      "id": "27",
-      "title": "Cyber Security Essentials",
-      "instructor": "Victoria",
-      "duration": "6 hours",
-      "rating": 4.3,
-      "category": "Security",
-      "description": "Learn the fundamentals of cyber security and ethical hacking. Understand threats, vulnerabilities, and prevention techniques. Secure your applications effectively.",
-      "image": "https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/11/cybersecurity-logo.jpeg",
-      "video": "https://www.youtube.com/embed/inWWhr5tnEA",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Security Fundamentals",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/embed/inWWhr5tnEA"
-        },
-        {
-          "lessonId": 2,
-          "title": "Ethical Hacking Basics",
-          "duration": "65 mins",
-          "video": "https://www.youtube.com/embed/3Kq1MIfTWCE"
-        }
-      ]
-    },
-    {
-      "id": "28",
-      "title": "UI/UX Design Basics",
-      "instructor": "Madison",
-      "duration": "5 hours",
-      "rating": 4.2,
-      "category": "Design",
-      "description": "Learn design principles, wireframing, and prototyping. Create user-friendly and visually appealing interfaces. Important skill for frontend developers.",
-      "image": "https://www.aufaitux.com/wp-content/uploads/2022/06/mobile-app-ux-ui-basics.jpg",
-      "video": "https://www.youtube.com/embed/c9Wg6Cb_YlU",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Design Principles",
-          "duration": "45 mins",
-          "video": "https://www.youtube.com/embed/c9Wg6Cb_YlU"
-        },
-        {
-          "lessonId": 2,
-          "title": "Wireframing & Prototyping",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/qpH7-KFWZRI"
-        }
-      ]
-    },
-    {
-      "id": "29",
-      "title": "Testing with Jest",
-      "instructor": "Samuel",
-      "duration": "4 hours",
-      "rating": 4.4,
-      "category": "Testing",
-      "description": "Learn unit testing in JavaScript using Jest. Write test cases and improve application reliability. Important for production-ready applications.",
-      "image": "https://jestjs.io/img/opengraph.png",
-      "video": "https://www.youtube.com/embed/FgnxcUQ5vho",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Unit Testing Basics",
-          "duration": "40 mins",
-          "video": "https://www.youtube.com/embed/FgnxcUQ5vho"
-        },
-        {
-          "lessonId": 2,
-          "title": "Mocking & Coverage",
-          "duration": "50 mins",
-          "video": "https://www.youtube.com/embed/7r4xVDI2vho"
-        }
-      ]
-    },
-    {
-      "id": "30",
-      "title": "Career Preparation for Developers",
-      "instructor": "Grace",
-      "duration": "3 hours",
-      "rating": 4.9,
-      "category": "Career",
-      "description": "Prepare for technical interviews and resume building. Learn how to crack coding rounds and HR interviews. Ideal for freshers and job seekers.",
-      "image": "https://www.shutterstock.com/image-vector/people-growth-success-logo-icon-600nw-2671907887.jpg",
-      "video": "https://www.youtube.com/embed/6UlsArvbTeo",
-      "lessons": [
-        {
-          "lessonId": 1,
-          "title": "Resume Building",
-          "duration": "40 mins",
-          "video": "https://www.youtube.com/embed/6UlsArvbTeo"
-        },
-        {
-          "lessonId": 2,
-          "title": "Cracking Technical Interviews",
-          "duration": "60 mins",
-          "video": "https://www.youtube.com/embed/oVVdezJ0e7w"
-        }
-      ]
-    },
-    {
-      "id": "48b4",
       "title": "HTML",
       "instructor": "Joseph",
       "duration": "3 Hours",
-      "rating": "4",
+      "rating": 4,
       "category": "Frontend",
-      "description": "Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser. It defines the content and structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.",
-      "image": "https://img.freepik.com/free-psd/3d-rendered-html-file-icon_84443-57041.jpg?semt=ais_rp_50_assets&w=740&q=80",
+      "description": "Hypertext Markup Language is the standard markup language for web pages.",
+      "image": "https://img.freepik.com/free-psd/3d-rendered-html-file-icon_84443-57041.jpg",
       "video": "",
       "lessons": [
         {
-          "lessonId": 1772968164254,
           "title": "Introduction",
           "duration": "3 Hours",
           "video": "https://www.youtube.com/watch?v=lGKGDxwvrEQ"
         }
       ]
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
