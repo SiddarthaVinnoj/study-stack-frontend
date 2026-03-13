@@ -149,7 +149,7 @@ function AddCourse() {
           {/* Course Info */}
           <div className="course-info">
 
-            <h3>Add Course</h3>
+            <h3 style={{paddingLeft:"5px", paddingTop:"5px"}}>Add Course</h3>
 
             <input
               className="input-field"
@@ -199,14 +199,6 @@ function AddCourse() {
               onChange={handleChange}
             />
 
-            <input
-              className="input-field"
-              name="video"
-              placeholder="Course Preview Video URL"
-              value={course.video}
-              onChange={handleChange}
-            />
-
             <textarea
               className="textarea-field"
               name="description"
@@ -220,7 +212,7 @@ function AddCourse() {
           {/* Lessons Section */}
           <div className="lesson-section">
 
-            <h3>Lessons</h3>
+            <h3 style={{paddingLeft:"5px", paddingTop:"5px"}}>Lessons</h3>
 
             {course.lessons.map((lesson, index) => (
 
@@ -265,6 +257,7 @@ function AddCourse() {
               type="button"
               className="btn add-lesson-btn"
               onClick={addLesson}
+              style={{marginLeft:"5px"}}
             >
               Add Lesson
             </button>

@@ -47,40 +47,105 @@ function Login() {
     <>
       <Navbar />
 
-      <div className="signup-container">
+      <div
+        style={{
+          minHeight: "100vh",
+          background: "#000",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          paddingTop: "80px",
+          marginTop:'-90px'
+        }}
+      >
 
-        <form className="signup-form" onSubmit={handleLogin}>
+        <h1 style={{fontWeight:"700",marginBottom:"10px"}}>
+          Welcome back
+        </h1>
 
-          <h2 style={{color:"white",textAlign:"center",marginBottom:"20px"}}>
+        <p style={{color:"#aaa",marginBottom:"40px"}}>
+          Login to continue learning on <span style={{color:"#e85d26"}}>StudyStack</span>
+        </p>
+
+
+        <form
+          onSubmit={handleLogin}
+          style={{
+            width:"320px",
+            display:"flex",
+            flexDirection:"column",
+            gap:"25px"
+          }}
+        >
+
+          {/* Email */}
+          <input
+            type="email"
+            placeholder="Email address"
+            required
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
+            style={{
+              background:"transparent",
+              border:"none",
+              borderBottom:"1px solid #444",
+              padding:"10px 0",
+              color:"white",
+              outline:"none",
+              fontSize:"15px"
+            }}
+          />
+
+          {/* Password */}
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
+            style={{
+              background:"transparent",
+              border:"none",
+              borderBottom:"1px solid #444",
+              padding:"10px 0",
+              color:"white",
+              outline:"none",
+              fontSize:"15px"
+            }}
+          />
+
+          {/* Button */}
+          <button
+            type="submit"
+            style={{
+              marginTop:"10px",
+              padding:"12px",
+              background:"#e85d26",
+              border:"none",
+              borderRadius:"6px",
+              color:"white",
+              fontWeight:"600",
+              cursor:"pointer",
+              transition:"0.3s"
+            }}
+          >
             Login
-          </h2>
+          </button>
 
-          <div>
-            <label>Email</label>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              required
-              value={email}
-              onChange={(e)=>setEmail(e.target.value)}
-            />
-          </div>
-
-          <div>
-            <label>Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              required
-              value={password}
-              onChange={(e)=>setPassword(e.target.value)}
-            />
-          </div>
-
-          <button type="submit">Login</button>
-
-          <p>
-            Don't have an account? <Link to="/signup">Signup</Link>
+          <p style={{textAlign:"center",color:"#aaa"}}>
+            Don't have an account?{" "}
+            <Link
+              to="/signup"
+              style={{
+                color:"#e85d26",
+                textDecoration:"none",
+                fontWeight:"600"
+              }}
+            >
+              Signup
+            </Link>
           </p>
 
         </form>

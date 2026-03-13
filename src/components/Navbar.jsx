@@ -1,71 +1,128 @@
 import React, { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
-  const adminEmail =  import.meta.env.VITE_ADMIN_EMAIL;
-  const adminPassword =  import.meta.env.VITE_ADMIN_PASSWORD;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const adminEmail = import.meta.env.VITE_ADMIN_EMAIL;
   const navigate = useNavigate();
-  const location = useLocation();
-  const user = JSON.parse(localStorage.getItem("user")); 
-
-  const [searchTerm, setSearchTerm] = useState(
-    new URLSearchParams(location.search).get("search") || ""
-  );
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const handleLogout = () => {
     localStorage.removeItem("user");
     navigate("/login");
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    navigate(`${location.pathname}?search=${encodeURIComponent(searchTerm)}`);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className='navbar'>
-      <nav className="navbar navbar-expand-lg fixed-top">
-        <div className="container-fluid">
-          <Link to="/" className="navbar-brand"  style={{ fontSize: "25px" }}>
+    <div className="navbar">
+      <nav className="navbar navbar-expand-lg fixed-top" style={{ backgroundColor: "black" }}>
+        <div className="container-fluid nav-responsive">
+          
+          <Link to="/" className="navbar-brand" style={{ fontSize: "25px" }}>
             <span style={{ color: "#e85d26" }}>Study</span>
             <span style={{ color: "white" }}>Stack</span>
           </Link>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <form className="d-flex" role="search" onSubmit={handleSearch}>
-             <input className="form-control me-2" type="search" placeholder="Search courses" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} style={{backgroundColor: "black", color: "white", border: "1px solid #e85d26", borderRadius: "5px 0 0 5px", padding: "6px 10px", }}/>
-              <button
-                className="btn btn-outline-success"
-                type="submit"
-                style={{ backgroundColor: "#e85d26", color: "white", marginLeft: "-5px", border: "#e85d26" }}
-              >
-                Search
-              </button>
-            </form>
+          <button 
+            className="mobile-menu-toggle hamburger"
+            onClick={toggleMenu}
+            style={{
+              display: "block",
+              background: "none",
+              border: "none",
+              color: "white",
+              fontSize: "24px",
+              cursor: "pointer",
+              padding: "5px"
+            }}
+          >
+            <span className={`bar ${isMenuOpen ? 'open' : ''}`}></span>
+            <span className={`bar ${isMenuOpen ? 'open' : ''}`}></span>
+            <span className={`bar ${isMenuOpen ? 'open' : ''}`}></span>
+          </button>
 
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <div className={`collapse navbar-collapse ${isMenuOpen ? 'active' : ''}`} style={{ display: isMenuOpen ? 'block' : 'none' }}>
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 navbar-nav" style={{ 
+              display: "flex", 
+              gap: "20px", 
+              margin: "0",
+              listStyle: "none",
+              flexDirection: isMenuOpen ? "column" : "row",
+              position: isMenuOpen ? "absolute" : "static",
+              top: isMenuOpen ? "100%" : "auto",
+              right: isMenuOpen ? "0" : "auto",
+              background: isMenuOpen ? "black" : "transparent",
+              padding: isMenuOpen ? "20px" : "0",
+              minWidth: "200px",
+              boxShadow: isMenuOpen ? "0 4px 10px rgba(0,0,0,0.3)" : "none",
+              zIndex: 1000
+            }}>
+
               <li className="nav-item">
-                <Link to="/" className="nav-link" style={{ color: "white" }}>Home</Link>
+                <Link 
+                  to="/" 
+                  className="nav-link" 
+                  style={{ color: "white", textDecoration: "none" }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Home
+                </Link>
               </li>
+
               <li className="nav-item">
-                <Link to="/course" className="nav-link" style={{ color: "white" }}>Courses</Link>
+                <Link 
+                  to="/course" 
+                  className="nav-link" 
+                  style={{ color: "white", textDecoration: "none" }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Courses
+                </Link>
               </li>
+
               <li className="nav-item">
-                <Link to="/mycourses" className="nav-link" style={{ color: "white" }}>My Courses</Link>
+                <Link 
+                  to="/mycourses" 
+                  className="nav-link" 
+                  style={{ color: "white", textDecoration: "none" }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  My Courses
+                </Link>
               </li>
 
               {user ? (
                 <>
-                  {user.email === adminEmail && user.password === adminPassword && (
+                  {user.email === adminEmail && (
                     <li className="nav-item">
-                      <Link to="/admin" className="nav-link" style={{ color: "white" }}>Admin</Link>
+                      <Link 
+                        to="/admin" 
+                        className="nav-link" 
+                        style={{ color: "white", textDecoration: "none" }}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Admin
+                      </Link>
                     </li>
                   )}
+
                   <li className="nav-item">
                     <button
-                      onClick={handleLogout}
+                      onClick={() => {
+                        handleLogout();
+                        setIsMenuOpen(false);
+                      }}
                       className="nav-link"
-                      style={{ color: "white", background: "none", border: "none", cursor: "pointer" }}
+                      style={{
+                        color: "white",
+                        background: "none",
+                        border: "none",
+                        cursor: "pointer",
+                        textDecoration: "none"
+                      }}
                     >
                       Logout
                     </button>
@@ -74,13 +131,29 @@ function Navbar() {
               ) : (
                 <>
                   <li className="nav-item">
-                    <Link to="/login" className="nav-link" style={{ color: "white" }}>Login</Link>
+                    <Link 
+                      to="/login" 
+                      className="nav-link" 
+                      style={{ color: "white", textDecoration: "none" }}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Login
+                    </Link>
                   </li>
+
                   <li className="nav-item">
-                    <Link to="/signup" className="nav-link" style={{ color: "white" }}>SignUp</Link>
+                    <Link 
+                      to="/signup" 
+                      className="nav-link" 
+                      style={{ color: "white", textDecoration: "none" }}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      SignUp
+                    </Link>
                   </li>
                 </>
               )}
+
             </ul>
           </div>
         </div>

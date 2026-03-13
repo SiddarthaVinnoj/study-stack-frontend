@@ -5,119 +5,68 @@ import Navbar from "../components/Navbar";
 import { toast } from "react-toastify";
 
 function EditCourse() {
-
   const apiUrl = import.meta.env.VITE_API_URL;
   const { id } = useParams();
   const navigate = useNavigate();
 
   const [course, setCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     const fetchCourse = async () => {
-
       try {
-
         const res = await axios.get(`${apiUrl}/api/courses/${id}`);
-
-        setCourse({
-          ...res.data,
-          lessons: res.data.lessons || []
-        });
-
-      } catch (err) {
-
+        setCourse({ ...res.data, lessons: res.data.lessons || [] });
+      } catch {
         toast.error("Failed to fetch course");
-
+      } finally {
+        setLoading(false);
       }
-
     };
-
     fetchCourse();
-
   }, [id]);
 
   const handleChange = (e) => {
-
     setCourse({
       ...course,
-      [e.target.name]:
-        e.target.name === "rating"
-          ? Number(e.target.value)
-          : e.target.value
+      [e.target.name]: e.target.name === "rating" ? Number(e.target.value) : e.target.value,
     });
-
   };
 
   const handleLessonChange = (index, e) => {
-
-    const newLessons = [...course.lessons];
-
-    newLessons[index] = {
-      ...newLessons[index],
-      [e.target.name]: e.target.value
-    };
-
-    setCourse({
-      ...course,
-      lessons: newLessons
-    });
-
+    const lessons = [...course.lessons];
+    lessons[index] = { ...lessons[index], [e.target.name]: e.target.value };
+    setCourse({ ...course, lessons });
   };
 
   const addLesson = () => {
-
     setCourse({
       ...course,
-      lessons: [
-        ...course.lessons,
-        {
-          lessonId: Date.now(),
-          title: "",
-          duration: "",
-          video: ""
-        }
-      ]
+      lessons: [...course.lessons, { lessonId: Date.now(), title: "", duration: "", video: "" }],
     });
-
   };
 
   const removeLesson = (index) => {
-
-    const newLessons = [...course.lessons];
-    newLessons.splice(index, 1);
-
-    setCourse({
-      ...course,
-      lessons: newLessons
-    });
-
+    const lessons = [...course.lessons];
+    lessons.splice(index, 1);
+    setCourse({ ...course, lessons });
   };
 
   const updateCourse = async () => {
-
     if (!course.title || !course.instructor || !course.category) {
       toast.error("Please fill required fields");
       return;
     }
-
     try {
-
       await axios.put(`${apiUrl}/api/courses/${id}`, course);
-
       toast.success("Course updated successfully");
-
       navigate("/admin");
-
-    } catch (err) {
-
+    } catch {
       toast.error("Update failed");
-
     }
-
   };
 
-  if (!course)
+  if (loading)
     return (
       <h2 style={{ color: "white", textAlign: "center", marginTop: "100px" }}>
         Loading...
@@ -127,222 +76,49 @@ function EditCourse() {
   return (
     <>
       <Navbar />
-
       <div className="editcourse-container">
-
         <div className="editcourse-card">
-
           <div className="course-info">
-
             <h3>Edit Course</h3>
-
-            <input
-              className="input-field"
-              name="title"
-              placeholder="Title"
-              value={course.title}
-              onChange={handleChange}
-            />
-
-            <input
-              className="input-field"
-              name="instructor"
-              placeholder="Instructor"
-              value={course.instructor}
-              onChange={handleChange}
-            />
-
-            <input
-              className="input-field"
-              name="duration"
-              placeholder="Duration"
-              value={course.duration}
-              onChange={handleChange}
-            />
-
-            <input
-              className="input-field"
-              name="rating"
-              placeholder="Rating"
-              value={course.rating}
-              onChange={handleChange}
-            />
-
-            <input
-              className="input-field"
-              name="category"
-              placeholder="Category"
-              value={course.category}
-              onChange={handleChange}
-            />
-
-            <input
-              className="input-field"
-              name="image"
-              placeholder="Image URL"
-              value={course.image}
-              onChange={handleChange}
-            />
-
-            <textarea
-              className="textarea-field"
-              name="description"
-              placeholder="Description"
-              value={course.description}
-              onChange={handleChange}
-            />
-
+            <input className="input-field" name="title" placeholder="Title" value={course.title} onChange={handleChange} />
+            <input className="input-field" name="instructor" placeholder="Instructor" value={course.instructor} onChange={handleChange} />
+            <input className="input-field" name="duration" placeholder="Duration" value={course.duration} onChange={handleChange} />
+            <input className="input-field" name="rating" placeholder="Rating" value={course.rating} onChange={handleChange} />
+            <input className="input-field" name="category" placeholder="Category" value={course.category} onChange={handleChange} />
+            <input className="input-field" name="image" placeholder="Image URL" value={course.image} onChange={handleChange} />
+            <textarea className="textarea-field" name="description" placeholder="Description" value={course.description} onChange={handleChange} />
           </div>
 
           <div className="lesson-section">
-
             <h3>Lessons</h3>
-
             {course.lessons.map((lesson, index) => (
-
               <div className="lesson-card" key={lesson.lessonId || index}>
-
-                <input
-                  className="input-field"
-                  name="title"
-                  placeholder="Lesson Title"
-                  value={lesson.title}
-                  onChange={(e) => handleLessonChange(index, e)}
-                />
-
-                <input
-                  className="input-field"
-                  name="duration"
-                  placeholder="Duration"
-                  value={lesson.duration}
-                  onChange={(e) => handleLessonChange(index, e)}
-                />
-
-                <input
-                  className="input-field"
-                  name="video"
-                  placeholder="Video URL"
-                  value={lesson.video}
-                  onChange={(e) => handleLessonChange(index, e)}
-                />
-
-                <button
-                  type="button"
-                  className="btn remove-btn"
-                  onClick={() => removeLesson(index)}
-                >
-                  Remove
-                </button>
-
+                <input className="input-field" name="title" placeholder="Lesson Title" value={lesson.title} onChange={(e) => handleLessonChange(index, e)} />
+                <input className="input-field" name="duration" placeholder="Duration" value={lesson.duration} onChange={(e) => handleLessonChange(index, e)} />
+                <input className="input-field" name="video" placeholder="Video URL" value={lesson.video} onChange={(e) => handleLessonChange(index, e)} />
+                <button type="button" className="btn remove-btn" onClick={() => removeLesson(index)}>Remove</button>
               </div>
-
             ))}
-
-            <button
-              type="button"
-              className="btn add-lesson-btn"
-              onClick={addLesson}
-            >
-              Add Lesson
-            </button>
-
-            <button
-              type="button"
-              className="btn submit-btn"
-              onClick={updateCourse}
-            >
-              Update Course
-            </button>
-
+            <button type="button" className="btn add-lesson-btn" onClick={addLesson}>Add Lesson</button>
+            <button type="button" className="btn submit-btn" onClick={updateCourse}>Update Course</button>
           </div>
-
         </div>
-
       </div>
-
       <style jsx>{`
-        .editcourse-container {
-          display: flex;
-          justify-content: center;
-          padding: 40px;
-          background-color: #111;
-        }
-
-        .editcourse-card {
-          display: flex;
-          gap: 40px;
-          background-color: #1c1c1c;
-          padding: 30px;
-          border-radius: 12px;
-          width: 100%;
-          max-width: 1200px;
-          flex-wrap: wrap;
-        }
-
-        .course-info,
-        .lesson-section {
-          flex: 1;
-          min-width: 300px;
-        }
-
-        h3 {
-          color: #e85d26;
-          margin-bottom: 15px;
-        }
-
-        .input-field,
-        .textarea-field {
-          width: 100%;
-          margin-bottom: 12px;
-          padding: 10px 12px;
-          border-radius: 8px;
-          border: 1px solid #444;
-          background-color: #111;
-          color: white;
-        }
-
-        .textarea-field {
-          height: 100px;
-          resize: none;
-        }
-
-        .lesson-card {
-          margin-bottom: 15px;
-          padding: 10px;
-          border: 1px solid #444;
-          border-radius: 8px;
-          background-color: #222;
-        }
-
-        .btn {
-          padding: 8px 15px;
-          border: none;
-          border-radius: 6px;
-          font-weight: 600;
-          cursor: pointer;
-          margin-right: 10px;
-        }
-
-        .add-lesson-btn {
-          background-color: #4f46e5;
-          color: white;
-          margin-top: 10px;
-        }
-
-        .submit-btn {
-          background-color: #e85d26;
-          color: white;
-          margin-top: 10px;
-        }
-
-        .remove-btn {
-          background-color: #ff4d4f;
-          color: white;
-        }
+        .editcourse-container { display: flex; justify-content: center; padding: 40px; background-color: #111; }
+        .editcourse-card { display: flex; gap: 40px; background-color: #1c1c1c; padding: 30px; border-radius: 12px; width: 100%; max-width: 1200px; flex-wrap: wrap; }
+        .course-info, .lesson-section { flex: 1; min-width: 300px; }
+        h3 { color: #e85d26; margin-bottom: 15px; }
+        .input-field, .textarea-field { width: 100%; margin-bottom: 12px; padding: 10px 12px; border-radius: 8px; border: 1px solid #444; background-color: #111; color: white; }
+        .textarea-field { height: 100px; resize: none; }
+        .lesson-card { margin-bottom: 15px; padding: 10px; border: 1px solid #444; border-radius: 8px; background-color: #222; }
+        .btn { padding: 8px 15px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; margin-right: 10px; transition: transform 0.2s; }
+        .add-lesson-btn { background-color: #4f46e5; color: white; margin-top: 10px; } .add-lesson-btn:hover { transform: scale(1.05); background-color: #6d5dfc; }
+        .remove-btn { background-color: #e85d26; color: white; margin-top: 10px; } .remove-btn:hover { transform: scale(1.05); background-color: #ff7038; }
+        .submit-btn { background-color: #e85d26; color: white; width: 100%; margin-top: 20px; } .submit-btn:hover { transform: scale(1.02); background-color: #ff7038; }
       `}</style>
     </>
   );
-
 }
 
 export default EditCourse;

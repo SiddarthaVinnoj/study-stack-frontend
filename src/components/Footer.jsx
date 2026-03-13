@@ -1,54 +1,103 @@
-import React from 'react'
+import React from "react";
 
 function Footer() {
   return (
-    <div>
-      <footer className="footer">
-  <div className="footer-container">
+    <footer
+      style={{
+        background: "#000",
+        color: "#ccc",
+        padding: "60px 10%",
+        borderTop: "1px solid #222"
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+          gap: "40px"
+        }}
+      >
+        {/* Logo Section */}
+        <div style={{ maxWidth: "300px" }}>
+          <h3
+            style={{
+              color: "#e85d26",
+              fontWeight: "700",
+              marginBottom: "10px"
+            }}
+          >
+            StudyStack
+          </h3>
 
-    <div className="footer-section">
-      <h3 className="footer-logo">Studystack</h3>
-      <p>Learn modern technologies from industry experts.  
-      Build skills that help you grow in your career.</p>
-    </div>
+          <p style={{ color: "#999", lineHeight: "1.6" }}>
+            Learn modern technologies from industry experts.
+            Build real-world skills and grow your career
+            with high quality courses.
+          </p>
+        </div>
 
-    <div className="footer-section">
-      <h4>Courses</h4>
-      <ul>
-        <li>Frontend</li>
-        <li>Backend</li>
-        <li>Fullstack</li>
-        <li>AI & ML</li>
-      </ul>
-    </div>
+        {/* Courses */}
+        <div>
+          <h4 style={{ color: "white", marginBottom: "15px" }}>Courses</h4>
 
-    <div className="footer-section">
-      <h4>Company</h4>
-      <ul>
-        <li>About</li>
-        <li>Careers</li>
-        <li>Blog</li>
-        <li>Contact</li>
-      </ul>
-    </div>
+          <ul style={{ listStyle: "none", padding: 0, lineHeight: "2" }}>
+            <li style={{ cursor: "pointer" }}>Frontend</li>
+            <li style={{ cursor: "pointer" }}>Backend</li>
+            <li style={{ cursor: "pointer" }}>Fullstack</li>
+            <li style={{ cursor: "pointer" }}>AI & ML</li>
+          </ul>
+        </div>
 
-    <div className="footer-section">
-      <h4>Follow Us</h4>
-      <div className="social">
-        <i className="fa-brands fa-github"></i>
-        <i className="fa-brands fa-linkedin"></i>
-        <i className="fa-brands fa-twitter"></i>
+        {/* Company */}
+        <div>
+          <h4 style={{ color: "white", marginBottom: "15px" }}>Company</h4>
+
+          <ul style={{ listStyle: "none", padding: 0, lineHeight: "2" }}>
+            <li style={{ cursor: "pointer" }}>About</li>
+            <li style={{ cursor: "pointer" }}>Careers</li>
+            <li style={{ cursor: "pointer" }}>Blog</li>
+            <li style={{ cursor: "pointer" }}>Contact</li>
+          </ul>
+        </div>
+
+        {/* Social */}
+        <div>
+          <h4 style={{ color: "white", marginBottom: "15px" }}>Follow Us</h4>
+
+          <div style={{ display: "flex", gap: "20px", fontSize: "22px" }}>
+            <i
+              className="fa-brands fa-github"
+              style={{ cursor: "pointer", transition: "0.3s" }}
+            ></i>
+
+            <i
+              className="fa-brands fa-linkedin"
+              style={{ cursor: "pointer", transition: "0.3s" }}
+            ></i>
+
+            <i
+              className="fa-brands fa-twitter"
+              style={{ cursor: "pointer", transition: "0.3s" }}
+            ></i>
+          </div>
+        </div>
       </div>
-    </div>
 
-  </div>
-
-  <div className="footer-bottom">
-    © 2026 Studystack. All rights reserved.
-  </div>
-</footer>
-    </div>
-  )
+      {/* Bottom */}
+      <div
+        style={{
+          borderTop: "1px solid #222",
+          marginTop: "40px",
+          paddingTop: "20px",
+          textAlign: "center",
+          color: "#777"
+        }}
+      >
+        © 2026 <span style={{ color: "#e85d26" }}>StudyStack</span>. All rights reserved.
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

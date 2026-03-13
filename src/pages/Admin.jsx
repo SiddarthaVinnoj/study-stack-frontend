@@ -53,53 +53,108 @@ function Admin() {
     <>
       <Navbar />
 
-      <div className="container" style={{ marginTop: "100px" }}>
+      <div
+        style={{
+          padding: "40px",
+          marginTop: "80px",
+          minHeight: "100vh"
+        }}
+      >
 
-        <h2 style={{ color: "white", marginBottom: "20px" }}>
-          Admin Dashboard
-        </h2>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "30px"
+          }}
+        >
+          <h2 style={{ color: "white", fontWeight: "600" }}>
+            Admin Dashboard
+          </h2>
 
-        <Link to="/addcourse">
-          <button
-            className="btn"
-            style={{
-              backgroundColor: "#e85d26",
-              color: "white",
-              fontWeight: 600,
-              marginBottom: "20px"
-            }}
-          >
-            Add Course
-          </button>
-        </Link>
+          <Link to="/addcourse">
+            <button
+              style={{
+                background: "#e85d26",
+                color: "white",
+                border: "none",
+                padding: "8px 18px",
+                borderRadius: "6px",
+                fontWeight: "600",
+                cursor: "pointer"
+              }}
+            >
+              + Add Course
+            </button>
+          </Link>
+        </div>
 
-        <div className="row">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+            gap: "25px"
+          }}
+        >
 
           {courses.map((course) => (
 
-            <div className="col-md-4" key={course._id}>
+            <div
+              key={course._id}
+              style={{
+                background: "#1e293b",
+                borderRadius: "10px",
+                overflow: "hidden",
+                boxShadow: "0 6px 20px rgba(0,0,0,0.4)",
+                transition: "0.3s"
+              }}
+            >
 
-              <div className="card admin-card">
+              <img
+                src={course.image}
+                alt={course.title}
+                style={{
+                  width: "100%",
+                  height: "160px",
+                  objectFit: "cover"
+                }}
+              />
 
-                <img src={course.image} alt={course.title} />
+              <div style={{ padding: "15px" }}>
 
-                <div className="card-body">
+                <h5
+                  style={{
+                    color: "white",
+                    fontWeight: "600",
+                    marginBottom: "5px"
+                  }}
+                >
+                  {course.title}
+                </h5>
 
-                  <h5 style={{ color: "white", fontWeight: 600 }}>
-                    {course.title}
-                  </h5>
+                <p
+                  style={{
+                    color: "#94a3b8",
+                    fontSize: "14px",
+                    marginBottom: "15px"
+                  }}
+                >
+                  {course.instructor}
+                </p>
 
-                  <p style={{ color: "grey" }}>
-                    {course.instructor}
-                  </p>
+                <div style={{ display: "flex", gap: "10px" }}>
 
                   <Link to={`/editcourse/${course._id}`}>
                     <button
-                      className="btn"
                       style={{
-                        backgroundColor: "#4f46e5",
+                        background: "#4f46e5",
                         color: "white",
-                        fontWeight: 600
+                        border: "none",
+                        padding: "6px 12px",
+                        borderRadius: "5px",
+                        fontWeight: "500",
+                        cursor: "pointer"
                       }}
                     >
                       Edit
@@ -107,12 +162,14 @@ function Admin() {
                   </Link>
 
                   <button
-                    className="btn"
                     style={{
-                      backgroundColor: "#e85d26",
+                      background: "#e85d26",
                       color: "white",
-                      fontWeight: 600,
-                      marginLeft: "10px"
+                      border: "none",
+                      padding: "6px 12px",
+                      borderRadius: "5px",
+                      fontWeight: "500",
+                      cursor: "pointer"
                     }}
                     onClick={() => deleteCourse(course._id)}
                   >
